@@ -1,6 +1,6 @@
 ﻿namespace BookBiz_Management_System
 {
-    partial class Form1
+    partial class frmMain
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1628, 1170);
-            this.Name = "Form1";
+            this.ClientSize = new System.Drawing.Size(1331, 971);
+            this.Name = "frmMain";
             this.Text = "Form1";
             this.ResumeLayout(false);
 
