@@ -1,6 +1,7 @@
 using BookBiz_Management_System.BLL;
 using BookBiz_Management_System.DAL;
 using BookBiz_Management_System.GUI;
+using System.Linq;
 
 namespace BookBiz_Management_System
 {
@@ -27,21 +28,26 @@ namespace BookBiz_Management_System
             //Step 1: get input username and password
             string username = tbx_username.Text;
             string password = tbx_password.Text;
+            List<Employee> empList = EmployeeDAL.GetAllEmployees();
+           
 
             //step 2: search the record matches input username 
-            Employee emp = ((Employee)(from element in empList
-                       where element.Username.Equals(username)
-                       select element));
+            List<Employee> empListTemp = (from element in empList
+                                       where element.Username == username
+                                       select element).ToList();
+           
+            Employee emp = empListTemp.FirstOrDefault();
+
             //step 3: Check if the record exists, if yes, go to step 4. if no, show error message    
-            if(emp != null)
+            if (emp != null)
             {
                 //step 4: check if the password in record matches the input password, if yes, go to step 5, if no, show error message
-                if(emp.Password.Equals(password))
+                if (emp.Password.Equals(password))
                 {
                     this.Hide();
                     //step 5: check positionId of the record and redirect to different page for different position
-                    switch(emp.PositionId)
-                    {   
+                    switch (emp.PositionId)
+                    {
                         //redirect to MIS Manager
                         case 0:
                             FrmEmployee frmEmployee = new FrmEmployee();
@@ -53,21 +59,21 @@ namespace BookBiz_Management_System
                             frmClient.Show();
                             break;
                         //redirect to Inventory Controller
-                        case 2:    
-                                FrmBook frmBook = new FrmBook();
-                                frmBook.Show();
-                                break;
+                        case 2:
+                            FrmBook frmBook = new FrmBook();
+                            frmBook.Show();
+                            break;
                         //redirect to Order Clerks
                         case 3:
-                            
-                                FrmOrder frmOrder = new FrmOrder();
-                                frmOrder.Show();
-                                break;
+
+                            FrmOrder frmOrder = new FrmOrder();
+                            frmOrder.Show();
+                            break;
                         default:
                             MessageBox.Show("There is no such a position");
                             break;
 
-                            
+
                     }
                 }
                 else

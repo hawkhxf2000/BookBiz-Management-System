@@ -9,8 +9,9 @@ namespace BookBiz_Management_System.DAL
 {
     public static class EmployeeDAL
     {
-        private static string filePath = Application.StartupPath + @"\Employees.dat";
-        private static string fileTemp = Application.StartupPath + @"\Temp.dat";
+        private static string filePath = Application.StartupPath + @"\data\Employees.dat";
+        //private static string filePath = "C:\Users\hawkh\source\repos\hawkhxf2000\BookBiz Management System\data\Employees.dat";
+        private static string fileTemp = Application.StartupPath + @"\data\Temp.dat";
 
         public static void SaveEmployee(Employee emp)
         {
@@ -41,7 +42,7 @@ namespace BookBiz_Management_System.DAL
                 emp.Eid = Convert.ToInt32(fields[0]);
                 emp.Username = fields[1];
                 emp.Password = fields[2];
-                emp.PositionId = Convert.ToInt32(fields[0]);
+                emp.PositionId = Convert.ToInt32(fields[3]);
                 listE.Add(emp);
                 line = sReader.ReadLine();
             }
