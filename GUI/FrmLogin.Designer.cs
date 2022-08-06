@@ -35,17 +35,18 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbx_username = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lbl_username = new System.Windows.Forms.Label();
             this.lbl_password = new System.Windows.Forms.Label();
             this.tbx_password = new System.Windows.Forms.TextBox();
+            this.lbl_username = new System.Windows.Forms.Label();
+            this.tbx_username = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_login = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -86,52 +87,17 @@
             this.panel1.Size = new System.Drawing.Size(376, 691);
             this.panel1.TabIndex = 4;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::BookBiz_Management_System.Properties.Resources.pexels_lisa_fotios_1092751;
-            this.pictureBox2.Location = new System.Drawing.Point(76, 141);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(223, 165);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(56, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(269, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "BookBiz Management System";
-            // 
-            // tbx_username
-            // 
-            this.tbx_username.Location = new System.Drawing.Point(86, 13);
-            this.tbx_username.Name = "tbx_username";
-            this.tbx_username.Size = new System.Drawing.Size(178, 23);
-            this.tbx_username.TabIndex = 2;
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btn_login);
             this.panel2.Controls.Add(this.lbl_password);
             this.panel2.Controls.Add(this.tbx_password);
             this.panel2.Controls.Add(this.lbl_username);
             this.panel2.Controls.Add(this.tbx_username);
             this.panel2.Location = new System.Drawing.Point(52, 377);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(285, 114);
+            this.panel2.Size = new System.Drawing.Size(285, 156);
             this.panel2.TabIndex = 4;
-            // 
-            // lbl_username
-            // 
-            this.lbl_username.AutoSize = true;
-            this.lbl_username.Location = new System.Drawing.Point(21, 17);
-            this.lbl_username.Name = "lbl_username";
-            this.lbl_username.Size = new System.Drawing.Size(59, 15);
-            this.lbl_username.TabIndex = 3;
-            this.lbl_username.Text = "username";
             // 
             // lbl_password
             // 
@@ -150,7 +116,53 @@
             this.tbx_password.Size = new System.Drawing.Size(178, 23);
             this.tbx_password.TabIndex = 2;
             // 
-            // frmMain
+            // lbl_username
+            // 
+            this.lbl_username.AutoSize = true;
+            this.lbl_username.Location = new System.Drawing.Point(21, 17);
+            this.lbl_username.Name = "lbl_username";
+            this.lbl_username.Size = new System.Drawing.Size(59, 15);
+            this.lbl_username.TabIndex = 3;
+            this.lbl_username.Text = "username";
+            // 
+            // tbx_username
+            // 
+            this.tbx_username.Location = new System.Drawing.Point(86, 13);
+            this.tbx_username.Name = "tbx_username";
+            this.tbx_username.Size = new System.Drawing.Size(178, 23);
+            this.tbx_username.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(56, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(269, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "BookBiz Management System";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::BookBiz_Management_System.Properties.Resources.pexels_lisa_fotios_1092751;
+            this.pictureBox2.Location = new System.Drawing.Point(76, 141);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(223, 165);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btn_login
+            // 
+            this.btn_login.Location = new System.Drawing.Point(86, 119);
+            this.btn_login.Name = "btn_login";
+            this.btn_login.Size = new System.Drawing.Size(75, 23);
+            this.btn_login.TabIndex = 4;
+            this.btn_login.Text = "Login";
+            this.btn_login.UseVisualStyleBackColor = true;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
+            // 
+            // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,15 +170,15 @@
             this.ClientSize = new System.Drawing.Size(1000, 684);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "frmMain";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "FrmLogin";
             this.Text = "BookBIz Management System";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -186,5 +198,6 @@
         private Label lbl_password;
         private TextBox tbx_password;
         private Label lbl_username;
+        private Button btn_login;
     }
 }

@@ -8,10 +8,9 @@ namespace BookBiz_Management_System.BLL
 {
     internal class Author
     {
-        private string firstName { get; set; } 
-        private string lastName { get; set; }  
-
-        private string email { get; set; }
+        private string firstName;
+        private string lastName;
+        private string email;
 
         public Author(string firstName, string lastName, string email)
         {
@@ -20,5 +19,8 @@ namespace BookBiz_Management_System.BLL
             this.email = email;
         }
 
+        public string FirstName { get => firstName; set => firstName = value; }
+        public string LastName { get => lastName; set => lastName = value; }
+        public string Email { get => email; set => email = value; }
     }
 }

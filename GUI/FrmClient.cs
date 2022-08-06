@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace BookBiz_Management_System.GUI
 {
-    public partial class FrmOrder : Form
+    public partial class FrmClient : Form
     {
-        public FrmOrder()
+        public FrmClient()
         {
             InitializeComponent();
-        }
-
-        private void FrmOrder_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

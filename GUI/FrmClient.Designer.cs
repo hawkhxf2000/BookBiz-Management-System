@@ -1,6 +1,6 @@
 ﻿namespace BookBiz_Management_System.GUI
 {
-    partial class FrmOrder
+    partial class FrmClient
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // FrmOrder
+            // FrmClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "FrmOrder";
-            this.Text = "FrmOrder";
-            this.Load += new System.EventHandler(this.FrmOrder_Load);
+            this.Name = "FrmClient";
+            this.Text = "Client Management";
             this.ResumeLayout(false);
 
         }
