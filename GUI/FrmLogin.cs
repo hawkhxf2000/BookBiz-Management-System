@@ -28,20 +28,20 @@ namespace BookBiz_Management_System
             //Step 1: get input username and password
             string username = tbx_username.Text;
             string password = tbx_password.Text;
-            List<Employee> empList = EmployeeDAL.GetAllEmployees();
            
 
-            //step 2: search the record matches input username 
+            //step 2: search the record matches input username, check the count of records, if it's not 1, show error message, otherwise go to step 3 
             List<Employee> empListTemp = (from element in empList
                                        where element.Username == username
                                        select element).ToList();
            
-            Employee emp = empListTemp.FirstOrDefault();
+            
 
             //step 3: Check if the record exists, if yes, go to step 4. if no, show error message    
-            if (emp != null)
+            if (empListTemp.Count() == 1)
             {
-                //step 4: check if the password in record matches the input password, if yes, go to step 5, if no, show error message
+                //step 4: check if the password in record matches the input password, if yes, go to step 5, otherwise show error message
+                Employee emp = empListTemp[0];
                 if (emp.Password.Equals(password))
                 {
                     this.Hide();

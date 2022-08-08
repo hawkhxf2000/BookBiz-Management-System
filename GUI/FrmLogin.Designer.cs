@@ -36,13 +36,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_login = new System.Windows.Forms.Button();
             this.lbl_password = new System.Windows.Forms.Label();
             this.tbx_password = new System.Windows.Forms.TextBox();
             this.lbl_username = new System.Windows.Forms.Label();
             this.tbx_username = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btn_login = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -99,6 +99,16 @@
             this.panel2.Size = new System.Drawing.Size(285, 156);
             this.panel2.TabIndex = 4;
             // 
+            // btn_login
+            // 
+            this.btn_login.Location = new System.Drawing.Point(86, 119);
+            this.btn_login.Name = "btn_login";
+            this.btn_login.Size = new System.Drawing.Size(75, 23);
+            this.btn_login.TabIndex = 2;
+            this.btn_login.Text = "Login";
+            this.btn_login.UseVisualStyleBackColor = true;
+            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
+            // 
             // lbl_password
             // 
             this.lbl_password.AutoSize = true;
@@ -111,10 +121,12 @@
             // 
             // tbx_password
             // 
+            this.tbx_password.AcceptsTab = true;
             this.tbx_password.Location = new System.Drawing.Point(86, 71);
             this.tbx_password.Name = "tbx_password";
+            this.tbx_password.PasswordChar = '*';
             this.tbx_password.Size = new System.Drawing.Size(178, 23);
-            this.tbx_password.TabIndex = 2;
+            this.tbx_password.TabIndex = 1;
             // 
             // lbl_username
             // 
@@ -127,10 +139,11 @@
             // 
             // tbx_username
             // 
+            this.tbx_username.AcceptsTab = true;
             this.tbx_username.Location = new System.Drawing.Point(86, 13);
             this.tbx_username.Name = "tbx_username";
             this.tbx_username.Size = new System.Drawing.Size(178, 23);
-            this.tbx_username.TabIndex = 2;
+            this.tbx_username.TabIndex = 0;
             // 
             // label1
             // 
@@ -151,16 +164,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // btn_login
-            // 
-            this.btn_login.Location = new System.Drawing.Point(86, 119);
-            this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(75, 23);
-            this.btn_login.TabIndex = 4;
-            this.btn_login.Text = "Login";
-            this.btn_login.UseVisualStyleBackColor = true;
-            this.btn_login.Click += new System.EventHandler(this.btn_login_Click);
             // 
             // FrmLogin
             // 
@@ -196,8 +199,8 @@
         private Label label1;
         private PictureBox pictureBox2;
         private Label lbl_password;
-        private TextBox tbx_password;
         private Label lbl_username;
         private Button btn_login;
+        private TextBox tbx_password;
     }
 }

@@ -6,21 +6,23 @@ using System.Threading.Tasks;
 
 namespace BookBiz_Management_System.BLL
 {
-    internal class Author
+    public class Author
     {
-        private string firstName;
-        private string lastName;
+        private int authorId;
+        private string name;
         private string email;
 
-        public Author(string firstName, string lastName, string email)
+        public Author() { }
+
+        public Author(int authorId, string name, string email)
         {
-            this.firstName = firstName; 
-            this.lastName = lastName;
+            this.authorId = authorId;
+            this.name = name;
             this.email = email;
         }
 
-        public string FirstName { get => firstName; set => firstName = value; }
-        public string LastName { get => lastName; set => lastName = value; }
+        public int AuthorId { get => authorId; set => authorId = value; }
+        public string Name { get => name; set => name = value; }
         public string Email { get => email; set => email = value; }
     }
 }
