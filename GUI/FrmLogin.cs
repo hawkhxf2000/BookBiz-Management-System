@@ -46,7 +46,7 @@ namespace BookBiz_Management_System
                 {
                     this.Hide();
                     //step 5: check positionId of the record and redirect to different page for different position
-                    switch (emp.PositionId)
+                    switch (emp.GroupId)
                     {
                         //redirect to MIS Manager
                         case 0:
@@ -81,9 +81,13 @@ namespace BookBiz_Management_System
                     MessageBox.Show("Password does not matched, please check the password");
                 }
             }
-            else
+            else if(empListTemp.Count() == 0)
             {
                 MessageBox.Show("No employee with input username exists, please check the username");
+            }
+            else
+            {
+                MessageBox.Show("There are more than 1 user has the same username, please check the user List");
             }
         }
     }

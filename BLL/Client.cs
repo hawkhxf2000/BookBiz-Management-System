@@ -14,12 +14,13 @@ namespace BookBiz_Management_System.BLL
         private string? postalCode;
         private string phoneNumber;
         private string faxNumber;
+        private string email;
         private string bankAccount;
-        private int credit_limit;
+        private double creditLimit;
 
         public Client() { }
 
-        public Client(int clientId, string clientName, string? address, string? postalCode, string phoneNumber, string faxNumber, string bankAccount, int credit_limit)
+        public Client(int clientId, string clientName, string phoneNumber, string faxNumber, string email, string? address, string? postalCode,  string bankAccount, double creditLimit)
         {
             this.clientId = clientId;
             this.clientName = clientName;
@@ -27,8 +28,9 @@ namespace BookBiz_Management_System.BLL
             this.postalCode = postalCode;
             this.phoneNumber = phoneNumber;
             this.faxNumber = faxNumber;
+            this.email = email;
             this.bankAccount = bankAccount;
-            this.credit_limit = credit_limit;
+            this.creditLimit = creditLimit;
         }
 
         public int ClientId { get => clientId; set => clientId = value; }
@@ -38,6 +40,7 @@ namespace BookBiz_Management_System.BLL
         public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public string FaxNumber { get => faxNumber; set => faxNumber = value; }
         public string BankAccount { get => bankAccount; set => bankAccount = value; }
-        public int Credit_limit { get => credit_limit; set => credit_limit = value; }
+        public double CreditLimit { get => creditLimit; set => creditLimit = value; }
+        public string Email { get => email; set => email = value; }
     }
 }

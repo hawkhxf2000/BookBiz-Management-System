@@ -8,43 +8,37 @@ namespace BookBiz_Management_System.BLL
 {
     public class Book
     {
-        private string ISBN;
-        private string title;
-        private float unitPrice;
-        private int QOH;
-        private string publishYear;
-        private int publisherId;
-        private string authors;
+        private string? iSBN;
+        private string? title;
+        private decimal unitPrice;
+        private int qOH;
+        private string? category;
+        private string? publishYear;
+        private string? publisherName;
+        private string? authors;
+        
 
         public Book() { }
-        public Book(string iSBN, string title, float unitPrice, int qOH, string publishYear, int publisherId, string authors)
+
+        public Book(string iSBN, string title, decimal unitPrice, int qOH, string category, string publishYear, string publisherName, string authors)
         {
-            ISBN = iSBN;
+            this.iSBN = iSBN;
             this.title = title;
             this.unitPrice = unitPrice;
-            QOH = qOH;
+            this.qOH = qOH;
+            this.category = category;
             this.publishYear = publishYear;
-            this.publisherId = publisherId;
+            this.publisherName = publisherName;
             this.authors = authors;
         }
 
-        public string ISBN1 { get => ISBN; set => ISBN = value; }
+        public string ISBN { get => iSBN; set => iSBN = value; }
         public string Title { get => title; set => title = value; }
-        public float UnitPrice { get => unitPrice; set => unitPrice = value; }
-        public int QOH1 { get => QOH; set => QOH = value; }
+        public decimal UnitPrice { get => unitPrice; set => unitPrice = value; }
+        public int QOH { get => qOH; set => qOH = value; }
+        public string Category { get => category; set => category = value; }
         public string PublishYear { get => publishYear; set => publishYear = value; }
-        public int PublisherId { get => publisherId; set => publisherId = value; }
+        public string PublisherName { get => publisherName; set => publisherName = value; }
         public string Authors { get => authors; set => authors = value; }
-
-        enum category
-        {
-            Artificial_intelligence,
-            cyber_security,
-            computer_system,
-            graphic_design,
-            software_engineering,
-            numerical_analysis,
-            database_system
-        }
     }
 }

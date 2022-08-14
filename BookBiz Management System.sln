@@ -5,7 +5,12 @@ VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBiz Management System", "BookBiz Management System.csproj", "{5FF276F7-00D3-4B74-B2DE-2ACCF6775243}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookBiz Management SystemTests", "..\BookBiz Management SystemTests\BookBiz Management SystemTests.csproj", "{5E259253-CE56-4A98-A8EC-825C555AD107}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBiz Management SystemTests", "..\BookBiz Management SystemTests\BookBiz Management SystemTests.csproj", "{5E259253-CE56-4A98-A8EC-825C555AD107}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ED3B3242-0865-454B-A039-10DE255761F8}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

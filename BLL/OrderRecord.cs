@@ -8,18 +8,19 @@ namespace BookBiz_Management_System.BLL
 {
     public class OrderRecord
     {
-        private int orderNo;
-        private string clientName;
+        private static int count = 1; //use static variable to assign eid auto-increment
+        private int orderId;
+        private string? clientName;
 
-        public OrderRecord() { }
+        public OrderRecord() { this.orderId = count++; }
 
-        public OrderRecord(int orderNo, string clientName)
+        public OrderRecord(string clientName)
         {
-            this.orderNo = orderNo;
+            this.orderId = count++;
             this.clientName = clientName;
         }
 
-        public int OrderNo { get => orderNo; set => orderNo = value; }
+        public int OrderId { get => orderId; set => orderId = value; }
         public string ClientName { get => clientName; set => clientName = value; }
 
         enum orderMethod 

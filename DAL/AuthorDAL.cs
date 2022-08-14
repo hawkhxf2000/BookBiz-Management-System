@@ -9,39 +9,35 @@ namespace BookBiz_Management_System.DAL
 {
     public class AuthorDAL
     {
-        private static string filePath = Application.StartupPath + @"\data\Author.dat";
-        //private static string filePath = "C:\Users\hawkh\source\repos\hawkhxf2000\BookBiz Management System\data\Employees.dat";
-        //private static string fileTemp = Application.StartupPath + @"\data\Temp.dat";
+        private static string filePath = Application.StartupPath + @"\data\Author.dat";  //data source
+        //private List<Book> books = BookDAL.GetAllBooks();
 
-        public static void Add(Author author)
+        //1. add a record to file
+        public static void AddAuthor(Author author)
         {
             StreamWriter sWriter = new StreamWriter(filePath, true);
-            sWriter.WriteLine(author.AuthorId + "," + author.Name + "," + author.Email);
+            sWriter.WriteLine(author.AuthorId + "," + author.FirstName + "," +author.LastName +"," + author.Email);
             sWriter.Close();
-            MessageBox.Show("Author Data has been saved.");
         }
 
+        //2. find all records from files
         public static List<Author> GetAllAuthor()
         {
             List<Author> listA = new List<Author>();
             //step 1: Create an object of type StreamReader
             StreamReader sReader = new StreamReader(filePath);
             // Step 2: Read the file until teh end of the file
-            //         - Read line by line
-            //         - Split the line into an array of string based on seperator
-            //         - Create an object of type Author
-            //         -Store data in the object Author
-            //         -Add the object to the listA
-            //         -Close the file : VERY IMPORTANT
+           
 
-            string line = sReader.ReadLine();
+            string? line = sReader.ReadLine();
             while (line != null)
             {
                 string[] fields = line.Split(',');
                 Author author = new Author();
                 author.AuthorId = Convert.ToInt32(fields[0]);
-                author.Name = fields[1];
-                author.Email = fields[2];
+                author.FirstName = fields[1];
+                author.LastName = fields[2];
+                author.Email = fields[3];
                 listA.Add(author);
                 line = sReader.ReadLine();
             }
@@ -49,12 +45,13 @@ namespace BookBiz_Management_System.DAL
             return listA;
         }
 
-        public static List<Author> GetAuthorByName(string name)
+        //3. find record by authoer name
+        public static List<Author>? GetAuthorByName(string firstName, string lastName)
         {
             //step 1: get all records where name in records match input name
             List<Author> listA = GetAllAuthor();
             List<Author> authorList = (from element in listA
-                                          where element.Name == name
+                                          where element.FirstName == firstName || element.LastName == lastName
                                           select element).ToList();
             if(authorList != null)
             {
@@ -62,9 +59,15 @@ namespace BookBiz_Management_System.DAL
             }
             else
             {
-                MessageBox.Show("There is no author named " + name + "!");
+                MessageBox.Show("There is no author named " + firstName + " " +lastName + "!");
                 return null;
             }
         }
+
+        //4. update record by author name
+
+        //5. update record by author id
+
+        //delete record by author id
     }
 }

@@ -9,20 +9,23 @@ namespace BookBiz_Management_System.BLL
     public class Author
     {
         private int authorId;
-        private string name;
+        private string firstName;
+        private string lastName;
         private string email;
 
         public Author() { }
 
-        public Author(int authorId, string name, string email)
+        public Author(int authorId, string firstName, string lastName, string email)
         {
             this.authorId = authorId;
-            this.name = name;
+            this.firstName = firstName;
+            this.lastName = lastName;
             this.email = email;
         }
 
         public int AuthorId { get => authorId; set => authorId = value; }
-        public string Name { get => name; set => name = value; }
+        public string FirstName { get => firstName; set => firstName = value; }
+        public string LastName { get => lastName; set => lastName = value; }
         public string Email { get => email; set => email = value; }
     }
 }
