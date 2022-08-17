@@ -42,7 +42,7 @@ namespace BookBiz_Management_System
 
             //Set Book datagridview datasource
             DgvBookList.DataSource = BookDAL.GetAllBooks();
-
+            MtxISBN.Focus();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -123,7 +123,7 @@ namespace BookBiz_Management_System
         private void BtnAddClient_Click(object sender, EventArgs e)
         {
             //step 1: Set all input values to variables 
-            string iSBN = TbxISBN.Text;
+            string iSBN = MtxISBN.Text;
             string title = TbxTitle.Text;
             decimal unitPrice = Convert.ToDecimal(TbxUnitPrice.Text);
             int qOH = Convert.ToInt32(NudQOH.Value);
@@ -162,7 +162,7 @@ namespace BookBiz_Management_System
 
         private void ClearAll()
         {
-            TbxISBN.Clear();
+            MtxISBN.Clear();
             TbxTitle.Clear();
             TbxUnitPrice.Clear();
             NudQOH.Value = 1;

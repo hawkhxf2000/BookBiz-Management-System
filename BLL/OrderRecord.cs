@@ -8,27 +8,24 @@ namespace BookBiz_Management_System.BLL
 {
     public class OrderRecord
     {
-        private static int count = 1; //use static variable to assign eid auto-increment
-        private int orderId;
+        private string orderId;
         private string? clientName;
+        private string orderMethod;
+        //private string orderItems;
 
-        public OrderRecord() { this.orderId = count++; }
+        public OrderRecord() { }
 
-        public OrderRecord(string clientName)
+        public OrderRecord(string orderId, string? clientName, string orderMethod)
         {
-            this.orderId = count++;
+            this.orderId = orderId;
             this.clientName = clientName;
+            this.orderMethod = orderMethod;
+            //this.orderItems = orderItems;
         }
 
-        public int OrderId { get => orderId; set => orderId = value; }
-        public string ClientName { get => clientName; set => clientName = value; }
-
-        enum orderMethod 
-        {
-            phone,
-            fax,
-            Email
-        }
-
+        public string OrderId { get => orderId; set => orderId = value; }
+        public string? ClientName { get => clientName; set => clientName = value; }
+        public string OrderMethod { get => orderMethod; set => orderMethod = value; }
+        //public string OrderItems { get => orderItems; set => orderItems = value; }
     }
 }

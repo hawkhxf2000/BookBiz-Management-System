@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lbl_ISBN = new System.Windows.Forms.Label();
-            this.TbxISBN = new System.Windows.Forms.TextBox();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.TbxTitle = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -55,6 +54,7 @@
             this.TbxSearchBy = new System.Windows.Forms.TextBox();
             this.CbxSearchBy = new System.Windows.Forms.ComboBox();
             this.DgvBookList = new System.Windows.Forms.DataGridView();
+            this.MtxISBN = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudQOH)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -71,14 +71,6 @@
             this.lbl_ISBN.TabIndex = 1;
             this.lbl_ISBN.Text = "ISBN";
             this.lbl_ISBN.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // TbxISBN
-            // 
-            this.TbxISBN.Location = new System.Drawing.Point(87, 25);
-            this.TbxISBN.Margin = new System.Windows.Forms.Padding(2);
-            this.TbxISBN.Name = "TbxISBN";
-            this.TbxISBN.Size = new System.Drawing.Size(97, 23);
-            this.TbxISBN.TabIndex = 0;
             // 
             // lbl_Title
             // 
@@ -100,6 +92,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.MtxISBN);
             this.groupBox1.Controls.Add(this.BtnAddPublisher);
             this.groupBox1.Controls.Add(this.NudQOH);
             this.groupBox1.Controls.Add(this.CbxCategory);
@@ -118,7 +111,6 @@
             this.groupBox1.Controls.Add(this.lbl_PubYear);
             this.groupBox1.Controls.Add(this.TbxTitle);
             this.groupBox1.Controls.Add(this.lbl_Title);
-            this.groupBox1.Controls.Add(this.TbxISBN);
             this.groupBox1.Controls.Add(this.lbl_ISBN);
             this.groupBox1.Location = new System.Drawing.Point(9, 28);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -371,6 +363,14 @@
             this.DgvBookList.Size = new System.Drawing.Size(740, 226);
             this.DgvBookList.TabIndex = 0;
             // 
+            // MtxISBN
+            // 
+            this.MtxISBN.Location = new System.Drawing.Point(85, 24);
+            this.MtxISBN.Mask = "0000000000000";
+            this.MtxISBN.Name = "MtxISBN";
+            this.MtxISBN.Size = new System.Drawing.Size(100, 23);
+            this.MtxISBN.TabIndex = 20;
+            // 
             // FrmBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -411,7 +411,6 @@
         private GroupBox groupBox2;
         private Button BtnClearClientInfo;
         private Button BtnAddClient;
-        private TextBox TbxISBN;
         private Button BtnSearchAuthor;
         private NumericUpDown NudQOH;
         private ComboBox CbxCategory;
@@ -421,5 +420,6 @@
         private TextBox TbxSearchBy;
         private ComboBox CbxSearchBy;
         private Button BtnAddPublisher;
+        private MaskedTextBox MtxISBN;
     }
 }
