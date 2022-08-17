@@ -16,11 +16,11 @@ namespace BookBiz_Management_System.BLL
         private string faxNumber;
         private string email;
         private string bankAccount;
-        private double creditLimit;
+        private decimal creditLimit;
 
         public Client() { }
 
-        public Client(int clientId, string clientName, string phoneNumber, string faxNumber, string email, string? address, string? postalCode,  string bankAccount, double creditLimit)
+        public Client(int clientId, string clientName, string phoneNumber, string faxNumber, string email, string? address, string? postalCode,  string bankAccount, decimal creditLimit)
         {
             this.clientId = clientId;
             this.clientName = clientName;
@@ -40,7 +40,7 @@ namespace BookBiz_Management_System.BLL
         public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public string FaxNumber { get => faxNumber; set => faxNumber = value; }
         public string BankAccount { get => bankAccount; set => bankAccount = value; }
-        public double CreditLimit { get => creditLimit; set => creditLimit = value; }
+        public decimal CreditLimit { get => creditLimit; set => creditLimit = value; }
         public string Email { get => email; set => email = value; }
     }
 }

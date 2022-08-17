@@ -56,7 +56,7 @@ namespace BookBiz_Management_System.GUI
             string address = TbxAddress.Text;
             string postalCode = MtxPostalCode.Text;
             string bankAccount = MtxBankAccount.Text;
-            double creditLimit = Convert.ToDouble(TbxCreditLimit.Text);
+            decimal creditLimit = Convert.ToDecimal(TbxCreditLimit.Text);
 
             //step 2: verify variables
             //verify if not null
@@ -154,6 +154,26 @@ namespace BookBiz_Management_System.GUI
             MtxPostalCode.Text = selectedCells[3].Value.ToString();
             MtxBankAccount.Text = selectedCells[6].Value.ToString();
             TbxCreditLimit.Text = selectedCells[7].Value.ToString();
+        }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+           int clientId = Convert.ToInt32(TbxClientId.Text);
+           string clientName = TbxClientName.Text;
+           string phoneNumber = MtxPhoneNumber.Text;
+            string faxNumber = MtxFaxNumber.Text;
+            string email = TbxEmail.Text;
+            string address = TbxAddress.Text;
+            string postalCode = MtxPostalCode.Text;
+            string bankAccount = MtxBankAccount.Text;
+            decimal creditLimit = Convert.ToDecimal(TbxCreditLimit.Text);
+
+            var client = new Client(clientId, clientName, phoneNumber, faxNumber, email, address, postalCode, bankAccount, creditLimit);
+
+            ClientDAL.UpdateClient(client);
+
+            var clients = ClientDAL.GetAllClients().OrderBy(c => c.ClientId).ToList();
+            DgvClients.DataSource = clients;
         }
     }
 }

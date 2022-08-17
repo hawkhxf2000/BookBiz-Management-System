@@ -11,6 +11,7 @@ namespace BookBiz_Management_System.DAL
     public class ClientDAL
     {
         private static string filePath = Application.StartupPath + @"\data\Client.dat";  //data source
+        private static string fileTemp = Application.StartupPath + @"\data\Temp.dat"; 
 
         //Save new client to file
         public static void SaveClient(Client client)
@@ -51,7 +52,7 @@ namespace BookBiz_Management_System.DAL
                 client.Address = fields[5];
                 client.PostalCode = fields[6];
                 client.BankAccount = fields[7];
-                client.CreditLimit = Convert.ToInt32(fields[8]);
+                client.CreditLimit = Convert.ToDecimal(fields[8]);
                 listC.Add(client);
                 line = sReader.ReadLine();
             }
@@ -75,5 +76,31 @@ namespace BookBiz_Management_System.DAL
             return null;
         }
 
+        //Update client information by client Id
+        public static void UpdateClient(Client client)
+        {
+            StreamReader sReader = new StreamReader(filePath);
+            StreamWriter sWriter = new StreamWriter(fileTemp, true);
+
+            var line = sReader.ReadLine();
+            while (line != null)
+            {
+                string[] fields = line.Split(",");
+                if (Convert.ToInt32(fields[0]) != client.ClientId)
+                {
+                    sWriter.WriteLine(fields[0] + "," + fields[1] + "," + fields[2] + "," + fields[3] + "," + fields[4] + "," + fields[5] + ","
+                + fields[6] + "," + fields[7] + "," + fields[8]);
+                }
+                line = sReader.ReadLine();
+            }
+                sWriter.WriteLine(client.ClientId + "," + client.ClientName + "," + client.PhoneNumber + "," + client.FaxNumber + "," + client.Email + "," + client.Address + ","
+               + client.PostalCode + "," + client.BankAccount + "," + client.CreditLimit);
+
+                sWriter.Close();
+                sReader.Close();
+                File.Delete(filePath);
+                File.Move(fileTemp, filePath);
+            }
+
+        }
     }
-}

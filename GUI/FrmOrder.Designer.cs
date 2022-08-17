@@ -289,6 +289,7 @@
             this.MtxOrderNumber.Name = "MtxOrderNumber";
             this.MtxOrderNumber.Size = new System.Drawing.Size(100, 23);
             this.MtxOrderNumber.TabIndex = 0;
+            this.MtxOrderNumber.Leave += new System.EventHandler(this.MtxOrderNumber_Leave);
             // 
             // TbxClientName
             // 
@@ -360,6 +361,7 @@
             this.DgvOrderList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvOrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvOrderList.Location = new System.Drawing.Point(0, 66);
+            this.DgvOrderList.MultiSelect = false;
             this.DgvOrderList.Name = "DgvOrderList";
             this.DgvOrderList.RowTemplate.Height = 25;
             this.DgvOrderList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

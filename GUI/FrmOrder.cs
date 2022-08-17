@@ -286,5 +286,21 @@ namespace BookBiz_Management_System.GUI
 
             DgvBookItems.DataSource = orderItemsFound;
         }
+
+        private void MtxOrderNumber_Leave(object sender, EventArgs e)
+        {
+            string orderIdInput = MtxOrderNumber.Text;
+            var orderRecords = OrderRecordDAL.GetAllOrderRecords(); 
+            foreach (var record in orderRecords)
+            {
+                if(record.OrderId == orderIdInput)
+                {
+                    MessageBox.Show("The order number has already existed, please input another one!");
+                    MtxOrderNumber.Clear();
+                    MtxOrderNumber.Focus();
+                    return;
+                }
+            }
+        }
     }
 }

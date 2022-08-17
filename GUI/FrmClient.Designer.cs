@@ -55,6 +55,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.TbxSearchBy = new System.Windows.Forms.TextBox();
             this.CbxSearchBy = new System.Windows.Forms.ComboBox();
+            this.BtnUpdate = new System.Windows.Forms.Button();
+            this.BtnDelete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvClients)).BeginInit();
@@ -63,6 +65,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.MtxBankAccount);
+            this.groupBox1.Controls.Add(this.BtnUpdate);
             this.groupBox1.Controls.Add(this.TbxEmail);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.TbxCreditLimit);
@@ -133,10 +136,10 @@
             // BtnClearClientInfo
             // 
             this.BtnClearClientInfo.BackColor = System.Drawing.Color.Coral;
-            this.BtnClearClientInfo.Location = new System.Drawing.Point(667, 174);
+            this.BtnClearClientInfo.Location = new System.Drawing.Point(681, 169);
             this.BtnClearClientInfo.Name = "BtnClearClientInfo";
-            this.BtnClearClientInfo.Size = new System.Drawing.Size(75, 30);
-            this.BtnClearClientInfo.TabIndex = 10;
+            this.BtnClearClientInfo.Size = new System.Drawing.Size(75, 31);
+            this.BtnClearClientInfo.TabIndex = 11;
             this.BtnClearClientInfo.Text = "Clear";
             this.BtnClearClientInfo.UseVisualStyleBackColor = false;
             this.BtnClearClientInfo.Click += new System.EventHandler(this.BtnClearClientInfo_Click);
@@ -144,9 +147,9 @@
             // BtnAddClient
             // 
             this.BtnAddClient.BackColor = System.Drawing.Color.Aquamarine;
-            this.BtnAddClient.Location = new System.Drawing.Point(566, 174);
+            this.BtnAddClient.Location = new System.Drawing.Point(493, 169);
             this.BtnAddClient.Name = "BtnAddClient";
-            this.BtnAddClient.Size = new System.Drawing.Size(75, 30);
+            this.BtnAddClient.Size = new System.Drawing.Size(75, 31);
             this.BtnAddClient.TabIndex = 9;
             this.BtnAddClient.Text = "Add";
             this.BtnAddClient.UseVisualStyleBackColor = false;
@@ -262,6 +265,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.BtnDelete);
             this.groupBox2.Controls.Add(this.DgvClients);
             this.groupBox2.Controls.Add(this.BtnSearchClient);
             this.groupBox2.Controls.Add(this.label8);
@@ -279,6 +283,7 @@
             this.DgvClients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DgvClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvClients.Location = new System.Drawing.Point(0, 70);
+            this.DgvClients.MultiSelect = false;
             this.DgvClients.Name = "DgvClients";
             this.DgvClients.RowTemplate.Height = 25;
             this.DgvClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -290,10 +295,10 @@
             // 
             this.BtnSearchClient.BackColor = System.Drawing.Color.LightGreen;
             this.BtnSearchClient.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnSearchClient.Location = new System.Drawing.Point(658, 25);
+            this.BtnSearchClient.Location = new System.Drawing.Point(605, 25);
             this.BtnSearchClient.Name = "BtnSearchClient";
             this.BtnSearchClient.Size = new System.Drawing.Size(75, 31);
-            this.BtnSearchClient.TabIndex = 13;
+            this.BtnSearchClient.TabIndex = 14;
             this.BtnSearchClient.Text = "Search";
             this.BtnSearchClient.UseVisualStyleBackColor = false;
             this.BtnSearchClient.Click += new System.EventHandler(this.BtnSearchClient_Click);
@@ -311,8 +316,8 @@
             // 
             this.TbxSearchBy.Location = new System.Drawing.Point(239, 30);
             this.TbxSearchBy.Name = "TbxSearchBy";
-            this.TbxSearchBy.Size = new System.Drawing.Size(377, 23);
-            this.TbxSearchBy.TabIndex = 12;
+            this.TbxSearchBy.Size = new System.Drawing.Size(346, 23);
+            this.TbxSearchBy.TabIndex = 13;
             // 
             // CbxSearchBy
             // 
@@ -328,6 +333,29 @@
             this.CbxSearchBy.Size = new System.Drawing.Size(127, 23);
             this.CbxSearchBy.TabIndex = 10;
             this.CbxSearchBy.Text = "ID";
+            // 
+            // BtnUpdate
+            // 
+            this.BtnUpdate.BackColor = System.Drawing.Color.PeachPuff;
+            this.BtnUpdate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnUpdate.Location = new System.Drawing.Point(587, 169);
+            this.BtnUpdate.Name = "BtnUpdate";
+            this.BtnUpdate.Size = new System.Drawing.Size(75, 31);
+            this.BtnUpdate.TabIndex = 10;
+            this.BtnUpdate.Text = "Update";
+            this.BtnUpdate.UseVisualStyleBackColor = false;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
+            // 
+            // BtnDelete
+            // 
+            this.BtnDelete.BackColor = System.Drawing.Color.Tomato;
+            this.BtnDelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnDelete.Location = new System.Drawing.Point(701, 25);
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(75, 31);
+            this.BtnDelete.TabIndex = 15;
+            this.BtnDelete.Text = "Delete";
+            this.BtnDelete.UseVisualStyleBackColor = false;
             // 
             // FrmClient
             // 
@@ -388,5 +416,7 @@
         private TextBox TbxEmail;
         private Label label10;
         private MaskedTextBox MtxBankAccount;
+        private Button BtnDelete;
+        private Button BtnUpdate;
     }
 }
